@@ -31,94 +31,111 @@ Test data for 6.: First, use players 'Davies', 'Muller', 'Lewandowski' and 'Kimm
 Then, call the function again with players from game.scored
 */
 
-const game = {
-  team1: 'Bayern Munich',
-  team2: 'Borrussia Dortmund',
-  players: [
-    [
-      'Neuer',
-      'Pavard',
-      'Martinez',
-      'Alaba',
-      'Davies',
-      'Kimmich',
-      'Goretzka',
-      'Coman',
-      'Muller',
-      'Gnarby',
-      'Lewandowski',
-    ],
-    [
-      'Burki',
-      'Schulz',
-      'Hummels',
-      'Akanji',
-      'Hakimi',
-      'Weigl',
-      'Witsel',
-      'Hazard',
-      'Brandt',
-      'Sancho',
-      'Gotze',
-    ],
-  ],
-  score: '4:0',
-  scored: ['Lewandowski', 'Gnarby', 'Lewandowski', 'Hummels'],
-  date: 'Nov 9th, 2037',
-  odds: {
-    team1: 1.33,
-    x: 3.25,
-    team2: 6.5,
+// const game = {
+//   team1: 'Bayern Munich',
+//   team2: 'Borrussia Dortmund',
+//   players: [
+//     [
+//       'Neuer',
+//       'Pavard',
+//       'Martinez',
+//       'Alaba',
+//       'Davies',
+//       'Kimmich',
+//       'Goretzka',
+//       'Coman',
+//       'Muller',
+//       'Gnarby',
+//       'Lewandowski',
+//     ],
+//     [
+//       'Burki',
+//       'Schulz',
+//       'Hummels',
+//       'Akanji',
+//       'Hakimi',
+//       'Weigl',
+//       'Witsel',
+//       'Hazard',
+//       'Brandt',
+//       'Sancho',
+//       'Gotze',
+//     ],
+//   ],
+//   score: '4:0',
+//   scored: ['Lewandowski', 'Gnarby', 'Lewandowski', 'Hummels'],
+//   date: 'Nov 9th, 2037',
+//   odds: {
+//     team1: 1.33,
+//     x: 3.25,
+//     team2: 6.5,
+//   },
+// };
+
+// // 1.
+// const [players1, players2] = game.players;
+// console.log(players1);
+// console.log(players2);
+
+// // 2.
+// const [gk, ...fieldPlayers] = players1;
+// console.log(gk, fieldPlayers);
+
+// // 3.
+// const allPlayers = [...players1, ...players2];
+// console.log(allPlayers);
+
+// // 4.
+// const players1Final = [...players1, 'Thiago', 'Coutinho', 'Perisic'];
+// console.log(players1Final);
+
+// // 5.
+// const team1 = game.odds.team1;
+// const draw = game.odds.x;
+// const team2 = game.odds.team2;
+
+// console.log(team1, draw, team2);
+
+// // 6.
+// function printGoals(...name) {
+//   const names = [...name];
+//   console.log(names);
+//   let totalGoals = 0;
+//   for (let i = 0; i < game.scored.length; i++) {
+//     for (let j = 0; j < names.length; j++) {
+//       console.log(names[j], game.scored[i]);
+//       if (names[j] === game.scored[i]) {
+//         totalGoals++;
+//       }
+//     }
+//   }
+//   return totalGoals;
+// }
+
+// console.log(printGoals('Lewandowski', 'Gnarby'));
+
+// // 7.
+// team1 < team2 && console.log('Team 1 is more likely to win');
+// team1 > team2 && console.log('Team 2 is more likely to win');
+
+const weekdays = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
+const openingHours = {
+  [weekdays[3]]: {
+    open: 12,
+    close: 22,
+  },
+  [weekdays[4]]: {
+    open: 11,
+    close: 23,
+  },
+  [weekdays[5]]: {
+    open: 0, // Open 24 hours
+    close: 24,
   },
 };
 
-// 1.
-const [players1, players2] = game.players;
-console.log(players1);
-console.log(players2);
+console.log(openingHours);
 
-// 2.
-const [gk, ...fieldPlayers] = players1;
-console.log(gk, fieldPlayers);
-
-// 3.
-const allPlayers = [...players1, ...players2];
-console.log(allPlayers);
-
-// 4.
-const players1Final = [...players1, 'Thiago', 'Coutinho', 'Perisic'];
-console.log(players1Final);
-
-// 5.
-const team1 = game.odds.team1;
-const draw = game.odds.x;
-const team2 = game.odds.team2;
-
-console.log(team1, draw, team2);
-
-// 6.
-function printGoals(...name) {
-  const names = [...name];
-  console.log(names);
-  let totalGoals = 0;
-  for (let i = 0; i < game.scored.length; i++) {
-    for (let j = 0; j < names.length; j++) {
-      console.log(names[j], game.scored[i]);
-      if (names[j] === game.scored[i]) {
-        totalGoals++;
-      }
-    }
-  }
-  return totalGoals;
-}
-
-console.log(printGoals('Lewandowski', 'Gnarby'));
-
-// 7.
-team1 < team2 && console.log('Team 1 is more likely to win');
-team1 > team2 && console.log('Team 2 is more likely to win');
-
-/*
 const restaurant = {
   Name: 'Classico Italiano',
   location: 'Via Angelo Tavanti 23, Firenze, Italy',
@@ -126,20 +143,8 @@ const restaurant = {
   starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
   mainMenu: ['Pizza', 'Pasta', 'Risotto'],
 
-  openingHours: {
-    thu: {
-      open: 12,
-      close: 22,
-    },
-    fri: {
-      open: 11,
-      close: 23,
-    },
-    sat: {
-      open: 0, // Open 24 hours
-      close: 24,
-    },
-  },
+  // ES6 enhanced object literals
+  openingHours,
 
   orderPasta: function (ing1, ing2, ing3) {
     console.log(
@@ -153,13 +158,43 @@ const restaurant = {
   },
 };
 
-restaurant.numGuests = 0; // I din't understad this syntax.
-const guests = restaurant.numGuests || 10;
-console.log(guests);
+if (restaurant.openingHours.mon) console.log(restaurant.openingHours.mon.open);
 
-//Nullish: null and undefined (NOT 0 or '')
-const guestCorrect = restaurant.numGuests ?? 10;
-console.log(guestCorrect);
+//With optional chaining
+console.log(restaurant.openingHours.mon?.open);
+console.log(restaurant.openingHours?.mon?.open);
+
+//Example
+
+const days = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
+
+for (const day of days) {
+  console.log(day);
+  console.log(restaurant.openingHours[day]);
+}
+
+// console.log(restaurant);
+
+// const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
+// console.log(menu);
+
+// for (const item of menu) {
+//   console.log(item);
+// }
+
+// for (const [i, el] of menu.entries()) {
+//   console.log(`${i + 1}: ${el}`);
+// }
+
+// console.log([...menu.entries()]);
+
+// restaurant.numGuests = 0; // I din't understad this syntax.
+// const guests = restaurant.numGuests || 10;
+// console.log(guests);
+
+// //Nullish: null and undefined (NOT 0 or '')
+// const guestCorrect = restaurant.numGuests ?? 10;
+// console.log(guestCorrect);
 
 /*
 console.log('-----OR-----');
