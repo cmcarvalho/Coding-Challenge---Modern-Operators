@@ -169,9 +169,14 @@ console.log(restaurant.openingHours?.mon?.open);
 const days = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
 
 for (const day of days) {
-  console.log(day);
-  console.log(restaurant.openingHours[day]);
+  // console.log(day);
+  const open = restaurant.openingHours[day]?.open ?? 'closed';
+  console.log(`On ${day}, we open at ${open}`);
 }
+
+//Methods
+console.log(restaurant.order?.day(0, 1) ?? 'Method does not exist');
+console.log(restaurant.orderRisoto?.day(0, 1) ?? 'Method does not exist');
 
 // console.log(restaurant);
 
