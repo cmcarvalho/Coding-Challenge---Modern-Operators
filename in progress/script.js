@@ -170,8 +170,12 @@ const days = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
 
 for (const day of days) {
   // console.log(day);
-  const open = restaurant.openingHours[day]?.open ?? 'closed';
-  console.log(`On ${day}, we open at ${open}`);
+  const status = restaurant.openingHours[day]?.open ?? 'closed';
+  if (status != 'closed') {
+    console.log(`On ${day}, we open at ${status}`);
+  } else {
+    console.log(`On ${day}, we are ${status}`);
+  }
 }
 
 //Methods
