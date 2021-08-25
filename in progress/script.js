@@ -179,8 +179,16 @@ for (const day of days) {
 }
 
 //Methods
-console.log(restaurant.order?.day(0, 1) ?? 'Method does not exist');
-console.log(restaurant.orderRisoto?.day(0, 1) ?? 'Method does not exist');
+console.log(restaurant.orderPasta?.(0, 1) ?? 'Method does not exist');
+console.log(restaurant.orderRisoto?.(0, 1) ?? 'Method does not exist');
+
+//Arrays
+const users = [{ name: 'Jonas', email: 'hello@jonas.io' }];
+
+console.log(users[0]?.name ?? "That name does't exist");
+
+if (user.length > 0) console.log(users[0].name);
+else console.log('user array empty');
 
 // console.log(restaurant);
 
