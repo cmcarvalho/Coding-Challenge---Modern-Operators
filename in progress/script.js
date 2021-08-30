@@ -134,8 +134,6 @@ const openingHours = {
   },
 };
 
-console.log(openingHours);
-
 const restaurant = {
   Name: 'Classico Italiano',
   location: 'Via Angelo Tavanti 23, Firenze, Italy',
@@ -158,37 +156,59 @@ const restaurant = {
   },
 };
 
-if (restaurant.openingHours.mon) console.log(restaurant.openingHours.mon.open);
+// Property Names
+const properties = Object.keys(openingHours);
+console.log(properties);
 
-//With optional chaining
-console.log(restaurant.openingHours.mon?.open);
-console.log(restaurant.openingHours?.mon?.open);
+let openStr = `We are open on ${properties.length} days a week `;
+for (const day of properties) {
+  openStr += `${day}, `;
+}
+console.log(openStr);
 
-//Example
-
-const days = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
-
-for (const day of days) {
-  // console.log(day);
-  const status = restaurant.openingHours[day]?.open ?? 'closed';
-  if (status != 'closed') {
-    console.log(`On ${day}, we open at ${status}`);
-  } else {
-    console.log(`On ${day}, we are ${status}`);
-  }
+for (const day of Object.keys(openingHours)) {
+  console.log(day);
 }
 
-//Methods
-console.log(restaurant.orderPasta?.(0, 1) ?? 'Method does not exist');
-console.log(restaurant.orderRisoto?.(0, 1) ?? 'Method does not exist');
+// Property Values
+const values = Object.values(openingHours);
+console.log(values);
 
-//Arrays
-const users = [{ name: 'Jonas', email: 'hello@jonas.io' }];
+// Entire object
+const entries = Object.entries(openingHours);
+console.log(entries);
 
-console.log(users[0]?.name ?? "That name does't exist");
+// if (restaurant.openingHours.mon) console.log(restaurant.openingHours.mon.open);
 
-if (user.length > 0) console.log(users[0].name);
-else console.log('user array empty');
+// //With optional chaining
+// console.log(restaurant.openingHours.mon?.open);
+// console.log(restaurant.openingHours?.mon?.open);
+
+// //Example
+
+// const days = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
+
+// for (const day of days) {
+//   // console.log(day);
+//   const status = restaurant.openingHours[day]?.open ?? 'closed';
+//   if (status != 'closed') {
+//     console.log(`On ${day}, we open at ${status}`);
+//   } else {
+//     console.log(`On ${day}, we are ${status}`);
+//   }
+// }
+
+// //Methods
+// console.log(restaurant.orderPasta?.(0, 1) ?? 'Method does not exist');
+// console.log(restaurant.orderRisoto?.(0, 1) ?? 'Method does not exist');
+
+// //Arrays
+// const users = [{ name: 'Jonas', email: 'hello@jonas.io' }];
+
+// console.log(users[0]?.name ?? "That name does't exist");
+
+// if (user.length > 0) console.log(users[0].name);
+// else console.log('user array empty');
 
 // console.log(restaurant);
 
