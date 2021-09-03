@@ -119,20 +119,6 @@ Then, call the function again with players from game.scored
 // team1 > team2 && console.log('Team 2 is more likely to win');
 
 const weekdays = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
-const openingHours = {
-  [weekdays[3]]: {
-    open: 12,
-    close: 22,
-  },
-  [weekdays[4]]: {
-    open: 11,
-    close: 23,
-  },
-  [weekdays[5]]: {
-    open: 0, // Open 24 hours
-    close: 24,
-  },
-};
 
 const restaurant = {
   Name: 'Classico Italiano',
@@ -142,7 +128,7 @@ const restaurant = {
   mainMenu: ['Pizza', 'Pasta', 'Risotto'],
 
   // ES6 enhanced object literals
-  openingHours,
+  // openingHours,
 
   orderPasta: function (ing1, ing2, ing3) {
     console.log(
@@ -156,7 +142,24 @@ const restaurant = {
   },
 };
 
-// Property Names
+// Object itselt
+const openingHours = {
+  thu: {
+    open: 12,
+    close: 22,
+  },
+  fri: {
+    open: 11,
+    close: 23,
+  },
+  sat: {
+    open: 0, // Open 24 hours
+    close: 24,
+  },
+};
+
+// Property Names - Looping objects: Object Keys, Values and Entries;
+
 const properties = Object.keys(openingHours);
 console.log(properties);
 
@@ -177,6 +180,10 @@ console.log(values);
 // Entire object
 const entries = Object.entries(openingHours);
 console.log(entries);
+
+for (const [key, { open, close }] of entries) {
+  console.log(`On ${key} we open at ${open} and close at ${close}`);
+}
 
 // if (restaurant.openingHours.mon) console.log(restaurant.openingHours.mon.open);
 
