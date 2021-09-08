@@ -45,3 +45,34 @@ rest.set(1, 'Firenze, Italy');
 rest.set(2, 'Lisbon, Portugal');
 
 console.log(rest);
+
+rest
+  .set('categories', ['Italian', 'Pizzaria', 'Vegeterian', 'Organic'])
+  .set('open', 11)
+  .set('close', 23)
+  .set(true, 'We are open :D')
+  .set(false, 'We are closed :(');
+
+console.log(rest);
+console.log(rest.get('name'));
+console.log(rest.get(true));
+console.log(rest.get(1));
+
+const time = 21;
+console.log(rest.get(time > rest.get('open') && time < rest.get('close')));
+
+console.log(rest.has('categories'));
+
+// Deletining one entrie from a map:
+rest.delete(2);
+// rest.clear();
+console.log(rest);
+console.log(rest.size);
+
+const arr = [1, 2];
+rest.set(arr, 'Test');
+rest.set(document.querySelector('h1'), 'Heading');
+console.log(rest);
+console.log(rest.size);
+
+console.log(rest.get(arr));
