@@ -30,4 +30,19 @@ capitalizeName('cristiano carvalho machado');
 
 // Padding
 const message = 'Got to gate 23!';
-// console.log(message.)
+console.log(message.length);
+console.log(message.padStart(20, '+'));
+console.log('Jonas'.padStart(20, '+'));
+
+console.log(message.padStart(20, '+').padEnd(30, '+'));
+console.log('Jonas'.padStart(20, '+').padEnd(30, '+'));
+
+const maskCreditCard = function (number) {
+  const str = number + '';
+  const last = str.slice(-4);
+  console.log(last.padStart(str.length, '*'));
+  console.log(str);
+};
+
+maskCreditCard(321654987956413);
+maskCreditCard('321654987956413');
