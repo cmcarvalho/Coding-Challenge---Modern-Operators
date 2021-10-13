@@ -1,5 +1,3 @@
-console.log('Hello World!');
-
 // Let's continue with our football betting app! Keep using the 'game' variable from
 // before.
 // Your tasks:

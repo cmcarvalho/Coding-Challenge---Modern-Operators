@@ -36,4 +36,8 @@ checkMiddleSeat('11B');
 checkMiddleSeat('23C');
 checkMiddleSeat('3E');
 
+// JavaScript converts a String to a Object to use their string methods.
 console.log(new String('jonas'));
+console.log(typeof new String('jonas'));
+
+console.log(typeof new String('jonas').slice(1));

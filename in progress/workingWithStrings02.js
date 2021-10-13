@@ -1,9 +1,9 @@
 'use strict';
 
-const airline = 'Tap Air Portugal';
+const airline01 = 'Tap Air Portugal';
 
-console.log(airline.toLowerCase());
-console.log(airline.toUpperCase());
+console.log(airline01.toLowerCase());
+console.log(airline01.toUpperCase());
 
 // Fix capitalization in name
 const passanger = 'JoNas';
@@ -41,10 +41,10 @@ console.log(announcement.replaceAll('door', 'gate'));
 console.log(announcement.replace(/door/g, 'gate'));
 
 // Booleans
-const plane = 'A320neo';
-console.log(plane.includes('A320'));
-console.log(plane.includes('Boeing'));
-console.log(plane.startsWith('Airb'));
+const plane01 = 'A320neo';
+console.log(plane01.includes('A320'));
+console.log(plane01.includes('Boeing'));
+console.log(plane01.startsWith('Airb'));
 
 // Practice exercice
 const checkBaggage = function (items) {
