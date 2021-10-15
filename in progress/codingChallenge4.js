@@ -26,3 +26,24 @@
 // GOOD LUCK 😀
 // document.body.append(document.createElement('textarea'));
 // document.body.append(document.createElement('button'));
+
+function camelCaseName(name) {
+  const nameSpace = name.replaceAll('_', ' ').toLowerCase();
+  const nameArray = nameSpace.split(' ');
+  const nameCamel = [];
+
+  for (let i = 0; i < nameArray.length; i++) {
+    if (i === 0) {
+      nameCamel.push(nameArray[i]);
+    } else {
+      nameCamel.push(
+        nameArray[i].replace(nameArray[i][0], nameArray[i][0].toUpperCase())
+      );
+    }
+  }
+
+  const nameCamelComplete = nameCamel.join('');
+  return nameCamelComplete;
+}
+
+console.log(camelCaseName('Cristiano_Carvalho_Machado'));
